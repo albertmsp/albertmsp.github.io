@@ -4,4 +4,3 @@ Here are the course and my favourite teacher Brian
 
 
 ![Image of ELEC4630 logo](images/ELEC4630.png)
-![Image of Teacher Brian](images/Lovell_portrait_small.jpg)
