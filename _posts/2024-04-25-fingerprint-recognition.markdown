@@ -1,49 +1,16 @@
 ---
 layout: post
-title:  "Fastai model evaluation"
+title:  "Fingerprint features"
 date:   2024-04-25 14:30:30 +0800
 categories: jekyll update
 ---
-There are many ways for us to evaluate the deep learning model, for the fastai models, there are two ways: confusion matrix and t_SNE
+Local Structure in Fingerprints
 
-For confusion matrix:
+The local structure in fingerprints refers to the detailed features within the fingerprint patterns, such as local ridge orientations, bifurcations (where a ridge splits), and ridge endings (where a ridge stops). These features are crucial for fingerprint identification as they are unique to each individual. Typically, acquiring the local structure of a fingerprint involves image processing techniques such as enhancement, binarization, and thinning, followed by the extraction of minutiae points based on these detailed ridge patterns.
+![Image name](/images/local_structure.png)
 
-Confusion matrix is a tool often used in classification to visualize the performance of an algorithm. Each row of the matrix represents the instances in an actual class, while each column represents the instances in a predicted class. This allows you to see where the model might be confusing two classes and is useful for identifying misclassifications.
-![Image of confusion matrix](/images/confusion_matrix.png)
+Draw Minutiae in Fingerprints
+Drawing minutiae involves visually representing the critical points of a fingerprint, primarily the ridge bifurcations and endings. This process is essential in fingerprint analysis and identification systems. To draw minutiae, the fingerprint image is first processed to clarify and emphasize the ridge patterns. Techniques such as ridge filtering and skeletonization may be used to refine the image. Once the minutiae points are identified, they can be marked on the fingerprint image, often highlighted with different symbols or colors to distinguish between types of minutiae (e.g., ending as a dot, bifurcation as a branch). This visual representation helps in comparing fingerprints and is used in various applications like forensic analysis and biometric authentication.
+![Image name](/images/draw_minutus.png)
 
-For t_SNE:
-
-```console
-# Get the activations from the model
-def get_activations(learner, dataloader):
-    learner.model.eval()
-    activations = []
-    labels = []
-    with torch.no_grad():
-        for xb, yb in dataloader:
-            out = learner.model(xb)
-            activations.append(out)
-            labels.append(yb)
-    activations = torch.cat(activations).cpu().numpy()
-    labels = torch.cat(labels).cpu().numpy()
-    return activations, labels
-
-# Get activations and labels
-activations, labels = get_activations(learn, dls.valid)
-
-# Perform t-SNE to reduce dimensionality
-tsne = TSNE(n_components=2, random_state=42)
-activations_tsne = tsne.fit_transform(activations)
-
-# Plot t-SNE
-plt.figure(figsize=(10, 8))
-for i, class_name in enumerate(dls.vocab):
-    idx = labels == i
-    plt.scatter(activations_tsne[idx, 0], activations_tsne[idx, 1], label=class_name, alpha=0.7)
-plt.title('t-SNE Plot of CIFAR-10 Classes')
-plt.legend()
-plt.show()
-```
-
-t-SNE (t-distributed Stochastic Neighbor Embedding) is a machine learning algorithm for visualization developed by Laurens van der Maaten and Geoffrey Hinton. It reduces high-dimensional data to two or three dimensions so that it can be plotted on a graph. This technique is particularly good at creating a map that reveals structures at many different scales, which is crucial for understanding complex datasets with many variables.
-![Image of confusion matrix](/images/t_SNE.png)
+With the two features here, we can use them to compare fingerprints.
