@@ -28,6 +28,8 @@ github_username:  albertmsp
 header_pages:
   - about me.md
 
+time_zone: Australia/Brisbane
+
 
 # Build settings
 theme: minima
