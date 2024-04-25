@@ -1,5 +1,5 @@
 I am a student at university of UQ, i am now learning ELEC4630 and want to learn more about the computer vision and deep learning.
-Here are the course and my favourite teacher Brian
+Here are the course
 
 
 
