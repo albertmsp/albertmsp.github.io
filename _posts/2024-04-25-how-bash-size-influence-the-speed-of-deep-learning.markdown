@@ -9,6 +9,7 @@ For deep learning, when we running a deep learning model on our own laptop we ca
 
 Although they all can process the task perfectly, but speed difference come into existence when using CPU, GPU:
 ![Image of confusion matrix](/images/CPU.png)
+
 ![Image of confusion matrix](/images/GPU.png)
 GPUs (Graphics Processing Units) generally outperform CPUs (Central Processing Units) in deep learning tasks due to fundamental differences in their design and architecture, which make GPUs more efficient at processing large amounts of data in parallel.
 
