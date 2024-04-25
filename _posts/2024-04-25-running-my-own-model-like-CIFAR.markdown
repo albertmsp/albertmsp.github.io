@@ -40,3 +40,4 @@ Now we can use the database to train our model now:
 learn = vision_learner(dls, resnet18, metrics=error_rate)
 learn.fine_tune(3)
 ```
+After finish training, our model can now recongnize the picture we put in now!
