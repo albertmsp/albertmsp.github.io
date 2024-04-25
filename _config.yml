@@ -21,20 +21,18 @@
 title: Shiping Mei's learning experience of ELEC4630
 email: shiping.mei@uqconnect.edu.au
 description: This is Shiping Mei's blog to store the learning experience of ELEC4630 and ai
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "" 
 url: "https://albertmsp.github.io/"
 github_username:  albertmsp
-
-header_pages:
-  - about me.md
-
-time_zone: Australia/Brisbane
 
 
 # Build settings
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-gist
+  - jekyll-octicons
+  - jekyll-github-metadata
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -55,3 +53,17 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+titles_from_headings:
+  enabled:     true
+  strip_title: true
+  collections: true
+
+highlighter: rouge
+markdown: kramdown
+kramdown:
+  math_engine: katex
+  input: GFM
+  auto_ids: true
+  hard_wrap: false
+  syntax_highlighter: rouge
