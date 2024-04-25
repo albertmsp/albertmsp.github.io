@@ -4,8 +4,9 @@ title:  "Build my first model like CIFAR"
 date:   2024-04-25 14:30:30 +0800
 categories: jekyll update
 ---
-To build my own learning model, after setting up the environment
-First we need to download my own database like the CIFAR
+To build our own model, we use the fastai in Python
+
+After setting up the environment, first we need to download my own database like the CIFAR
 ```console
 searches = 'airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck'
 path = Path('database for Q4')
