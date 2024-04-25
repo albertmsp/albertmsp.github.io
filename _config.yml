@@ -20,13 +20,14 @@
 
 title: Shiping Mei's learning experience of ELEC4630
 email: shiping.mei@uqconnect.edu.au
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+description: This is Shiping Mei's blog to store the learning experience of ELEC4630 and ai
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://albertmsp.github.io/"
 github_username:  albertmsp
+
+header_pages:
+  - about me.md
+
 
 # Build settings
 theme: minima
